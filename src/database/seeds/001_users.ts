@@ -1,20 +1,17 @@
 import * as Knex from "knex";
 import * as bcrypt from 'bcrypt' 
 
-let hashedPassword1 = ''
-let hashedPassword2 = ''
-
-bcrypt.genSalt(10, (err, salt) => {
-    bcrypt.hash('senha', salt, (err, hash) => {
-        hashedPassword1 = hash
+function genHash(){
+    let hashedPassword = ''
+    bcrypt.genSalt(10, (err, salt) => {
+        bcrypt.hash('senha', salt, (err, hash) => {
+            hashedPassword = hash
+        })
     })
-})
+    return hashedPassword
+}
 
-bcrypt.genSalt(10, (err, salt) => {
-    bcrypt.hash('senha', salt, (err, hash) => {
-        hashedPassword2 = hash
-    })
-})
+
 
 export async function seed(knex: Knex): Promise<void> {
     // Deletes ALL existing entries
@@ -25,12 +22,12 @@ export async function seed(knex: Knex): Promise<void> {
         { 
             name: 'Felipe Ferreira Colona',
             email: 'felipe@gmail.com',
-            password: hashedPassword1,
+            password: genHash(),
         },
         { 
             name: 'Daniel Shiffman',
             email: 'shiffman@gmail.com',
-            password: hashedPassword2,
+            password: genHash(),
         },
     ]);
 };
