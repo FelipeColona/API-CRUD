@@ -29,5 +29,45 @@ export async function seed(knex: Knex): Promise<void> {
             email: 'shiffman@gmail.com',
             password: genHash(),
         },
+        { 
+            name: 'Bill Cipher',
+            email: 'bill.cipher@gmail.com',
+            password: genHash(),
+        },
+        { 
+            name: 'Hollow Knight',
+            email: 'hollow.knight@gmail.com',
+            password: genHash(),
+        },
+        { 
+            name: 'Cuphead Mugman',
+            email: 'cuphead.mugman@gmail.com',
+            password: genHash(),
+        },
+        { 
+            name: 'Pale King',
+            email: 'pale.king@gmail.com',
+            password: genHash(),
+        },
+        { 
+            name: 'Dipper Pines',
+            email: 'pipper.pines@gmail.com',
+            password: genHash(),
+        },
+        { 
+            name: 'Mabel Pines',
+            email: 'mabel.pines@gmail.com',
+            password: genHash(),
+        },
+        { 
+            name: 'Stanford Pines',
+            email: 'stanford.pines@gmail.com',
+            password: genHash(),
+        },
+        { 
+            name: 'Stanley Pines',
+            email: 'stanley.pines@gmail.com',
+            password: genHash(),
+        }
     ]);
 };
