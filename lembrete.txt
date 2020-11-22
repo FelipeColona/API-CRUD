@@ -1,0 +1,3 @@
+Fazer a camada views, para retornar tudo menos a senha;
+
+No final refatorar todos os try catches para um ErrorHandler global, utilizando o Yup;

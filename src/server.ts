@@ -2,6 +2,8 @@
     import * as express from 'express'
     const app = express()
 
+    import fileUpload = require('express-fileupload')
+
     import routes from './routes'
 
 // Listening the Port
@@ -10,6 +12,7 @@
 
 // Middlewares
     app.use(express.json())
+    app.use(fileUpload())
 
     // Using Routes
         app.use(routes)
